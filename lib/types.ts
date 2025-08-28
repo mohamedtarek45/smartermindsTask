@@ -100,9 +100,9 @@ export type Repo = {
   labels_url: string;
   releases_url: string;
   deployments_url: string;
-  created_at: string;   
-  updated_at: string;  
-  pushed_at: string;    
+  created_at: string;
+  updated_at: string;
+  pushed_at: string;
   git_url: string;
   ssh_url: string;
   clone_url: string;
@@ -123,7 +123,13 @@ export type Repo = {
   archived: boolean;
   disabled: boolean;
   open_issues_count: number;
-  license: any | null; 
+  license: {
+    key: string;
+    name: string;
+    spdx_id: string;
+    url: string;
+    node_id: string;
+  } | null;
   allow_forking: boolean;
   is_template: boolean;
   web_commit_signoff_required: boolean;

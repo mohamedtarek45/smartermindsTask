@@ -38,7 +38,7 @@ export const SearchAction = async (
   redirect(`/username/${name}`);
 };
 export const getSummarizeData = async (prompt: string, userName: string) => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const baseUrl = process.env.BASE_URL || "http://localhost:3000";
   const res = await fetch(`${baseUrl}/api/summarize`, {
     next: { revalidate: 10, tags: [userName] },
     method: "POST",
