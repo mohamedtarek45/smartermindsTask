@@ -3,7 +3,6 @@
 import { redirect } from "next/navigation";
 
 export const getUserInfo = async (name: string) => {
-  console.log("token", process.env.GITHUB_TOKEN);
   const res = await fetch(`https://api.github.com/users/${name}`, {
     headers: {
       Authorization: `token ${process.env.GITHUB_TOKEN}`,
@@ -31,7 +30,7 @@ export const SearchAction = async (
   const name = formData.get("name") as string;
   const data = await getUserInfo(name);
   if (data.message) {
-    console.log("dddddddddddddd",data);
+
     return { message: data.message };
   }
   await getUserRepos(name);
