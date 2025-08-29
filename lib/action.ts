@@ -29,11 +29,10 @@ export const SearchAction = async (
 ) => {
   const name = formData.get("name") as string;
   const data = await getUserInfo(name);
-  if (data.message) {
 
+  if (data.message) {
     return { message: data.message };
   }
-  await getUserRepos(name);
   redirect(`/username/${name}`);
 };
 export const getSummarizeData = async (prompt: string, userName: string) => {

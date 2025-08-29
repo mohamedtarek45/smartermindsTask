@@ -43,7 +43,6 @@ The summary should:
 `;
 
   const summary = await getSummarizeData(prompt, name);
-
 if (summary.message) {
   return (
     <div className="max-w-xl mx-auto mt-6 p-4 bg-yellow-100 text-yellow-800 rounded-lg shadow-sm text-center flex items-center gap-2">
@@ -58,7 +57,7 @@ if (summary.message) {
   return (
     <div className="max-w-xl mx-auto mt-6 p-6 bg-white shadow-md rounded-xl">
       <h2 className="text-xl font-semibold text-gray-800 mb-3">Summary</h2>
-      <p className="text-gray-700 leading-relaxed">lorem50</p>
+      <p className="text-gray-700 leading-relaxed">{summary.summary}</p>
     </div>
   );
 };
